@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <com.chooongg.echarts.EChartsView
         android:id="@+id/echarts_view"
         android:layout_width="match_parent"

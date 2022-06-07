@@ -9,7 +9,7 @@ import android.webkit.JavascriptInterface
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import com.chooongg.echarts.options.EChartsOption
+import com.chooongg.echarts.option.EChartsOption
 import com.google.gson.Gson
 import org.json.JSONObject
 
@@ -62,6 +62,7 @@ class EChartsView @JvmOverloads constructor(
 
     fun loadJavascript(javascript: String) {
         if (pageFinished) {
+
             loadUrl("javascript:${javascript};")
         } else {
             waitingJavascriptInterface.add(javascript)
@@ -79,8 +80,8 @@ class EChartsView @JvmOverloads constructor(
     }
 
     fun setOptionJson(option: JSONObject) {
-        if (!option.has("darkMode")){
-            option.put("darkMode",false)
+        if (!option.has("darkMode")) {
+            option.put("darkMode", false)
         }
         loadJavascript("setOption('$option')")
     }

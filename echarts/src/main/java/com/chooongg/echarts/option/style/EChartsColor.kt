@@ -1,4 +1,4 @@
-package com.chooongg.echarts.options
+package com.chooongg.echarts.option.style
 
 import androidx.annotation.ColorInt
 import androidx.annotation.FloatRange
@@ -10,15 +10,16 @@ import com.chooongg.echarts.EChartsUtils
  * 渐变色
  */
 @Keep
-class EChartsColor {
-    private var type: Any? = null
-    private var x: Any? = null
-    private var y: Any? = null
-    private var x2: Any? = null
-    private var y2: Any? = null
-    private var r: Any? = null
-    private var colorStops: MutableList<ColorOffset>? = null
-    private var global: Boolean? = null
+data class EChartsColor(
+    private var type: Any? = null,
+    private var x: Any? = null,
+    private var y: Any? = null,
+    private var x2: Any? = null,
+    private var y2: Any? = null,
+    private var r: Any? = null,
+    private var colorStops: MutableList<ColorOffset>? = null,
+    private var global: Boolean? = null,
+) {
 
     fun type(@Type value: String) {
         this.type = value
@@ -81,9 +82,10 @@ class EChartsColor {
     @StringDef("linear", "radial")
     annotation class Type
 
-    class ColorOffset {
-        private var offset: Float? = null
-        private var color: String? = null
+    data class ColorOffset(
+        private var offset: Float? = null,
+        private var color: String? = null,
+    ) {
 
         fun offset(@FloatRange(from = 0.0, to = 1.0) value: Float) {
             this.offset = value
