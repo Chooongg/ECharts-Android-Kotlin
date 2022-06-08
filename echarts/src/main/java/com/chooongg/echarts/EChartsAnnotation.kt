@@ -3,31 +3,31 @@ package com.chooongg.echarts
 import androidx.annotation.StringDef
 
 @StringDef("self", "blank")
-annotation class EChartsLinkTarget
+internal annotation class EChartsLinkTarget
 
 @StringDef("auto", "left", "right", "center")
-annotation class EChartsHorizontal
+internal annotation class EChartsHorizontal
 
 @StringDef("auto", "top", "bottom", "middle")
-annotation class EChartsVertical
+internal annotation class EChartsVertical
 
 @StringDef("normal","italic","oblique")
-annotation class EChartsFontStyle
+internal annotation class EChartsFontStyle
 
 @StringDef("normal","bold","bolder","lighter")
-annotation class EChartsFontWeight
+internal annotation class EChartsFontWeight
 
 @StringDef("solid","dashed","dotted")
-annotation class EChartsBorderType
+internal annotation class EChartsBorderType
 
 @StringDef("none","truncate","break","breakAll")
-annotation class EChartsOverflow
-
-@StringDef("plain","scroll")
-annotation class EChartsLegendType
+internal annotation class EChartsOverflow
 
 @StringDef("horizontal","vertical")
-annotation class EChartsOrient
+internal annotation class EChartsOrient
 
 @StringDef("auto","left","right")
-annotation class EChartsAlign
+internal annotation class EChartsAlign
+
+@StringDef("circle","rect","roundRect","triangle","diamond","pin","arrow","none")
+internal annotation class EChartsIcon

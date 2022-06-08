@@ -2,6 +2,7 @@ package com.chooongg.echarts
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.res.Configuration
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
@@ -49,6 +50,7 @@ class EChartsView @JvmOverloads constructor(
                 }
             }
         }
+        waitingJavascriptInterface.add("javascript:getECharts(${isNightMode()});")
         super.loadUrl("file:///android_asset/ECharts.html")
     }
 
@@ -96,6 +98,16 @@ class EChartsView @JvmOverloads constructor(
         @JavascriptInterface
         fun log(value: String) {
             Log.d("ECharts", value)
+        }
+    }
+
+    /**
+     * 判断当前是否深色模式
+     */
+    private fun isNightMode(): Boolean {
+        return when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
+            Configuration.UI_MODE_NIGHT_YES -> true
+            else -> false
         }
     }
 }

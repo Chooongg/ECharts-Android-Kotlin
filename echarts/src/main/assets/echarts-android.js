@@ -1,9 +1,5 @@
 var charts;
 
-$(function(){
-    getECharts();
-})
-
 function getECharts(isDark){
     if(charts != undefined){
         return charts;
