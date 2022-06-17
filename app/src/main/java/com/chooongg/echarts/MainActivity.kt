@@ -3,6 +3,7 @@ package com.chooongg.echarts
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.color.MaterialColors
+import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +20,13 @@ class MainActivity : AppCompatActivity() {
                     )
                 }
             }
+        }
+        echartsView.setOptionJson {
+            put("title", "测试图表标题")
+            put("subtext", "副标题")
+            put("textStyle",JSONObject().apply {
+                put("color", MaterialColors.getColor(echartsView, androidx.appcompat.R.attr.colorPrimary))
+            })
         }
     }
 }

@@ -10,7 +10,6 @@ import com.chooongg.echarts.option.style.EChartsTextStyle
 import com.google.gson.JsonObject
 import java.net.URL
 
-@Keep
 data class EChartsLegend(
     private var type: String? = null,
     private var id: String? = null,

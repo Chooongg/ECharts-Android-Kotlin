@@ -1,8 +1,5 @@
 package com.chooongg.echarts.option.style
 
-import androidx.annotation.Keep
-
-@Keep
 data class EChartsItemStyle(
     private var color: String? = null,
     private var borderColor: String? = null,

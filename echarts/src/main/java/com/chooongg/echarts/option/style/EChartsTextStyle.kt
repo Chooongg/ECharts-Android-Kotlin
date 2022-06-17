@@ -1,9 +1,7 @@
 package com.chooongg.echarts.option.style
 
-import androidx.annotation.Keep
 import com.chooongg.echarts.*
 
-@Keep
 data class EChartsTextStyle(
     private var color: String? = null,
     private var fontStyle: String? = null,
@@ -190,7 +188,7 @@ data class EChartsTextStyle(
     /**
      * 在overflow配置为'truncate'的时候，可以通过该属性配置末尾显示的文本。
      */
-    fun ellipsis(value:String){
+    fun ellipsis(value: String) {
         ellipsis = value
     }
 }

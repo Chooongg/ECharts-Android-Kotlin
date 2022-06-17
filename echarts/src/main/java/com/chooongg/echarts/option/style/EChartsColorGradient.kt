@@ -2,15 +2,13 @@ package com.chooongg.echarts.option.style
 
 import androidx.annotation.ColorInt
 import androidx.annotation.FloatRange
-import androidx.annotation.Keep
 import androidx.annotation.StringDef
 import com.chooongg.echarts.EChartsUtils
 
 /**
  * 渐变色
  */
-@Keep
-data class EChartsColor(
+data class EChartsColorGradient(
     private var type: Any? = null,
     private var x: Any? = null,
     private var y: Any? = null,
@@ -75,6 +73,9 @@ data class EChartsColor(
         this.colorStops = list
     }
 
+    /**
+     * 绝对位置
+     */
     fun global(value: Boolean) {
         this.global = value
     }
